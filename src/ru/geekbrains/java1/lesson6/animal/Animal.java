@@ -3,32 +3,12 @@ package ru.geekbrains.java1.lesson6.animal;
 /**
  * Created by smeleyka on 12.04.17.
  */
-public class Animal {
+public abstract class Animal {
     protected String name;
     protected String color;
-    protected int runLength;
-    protected int jumpHeight;
-    protected int swimLength;
-
-
-
-//    public Animal(){}
-//
-//    public Animal(String name, String color, int runLength, int jumpHeight, int swimLength) {
-//        this.name = name;
-//        this.color = color;
-//        this.runLength = runLength;
-//        this.jumpHeight = jumpHeight;
-//        this.swimLength = swimLength;
-//    }
-//
-//    public Animal(String name, String color, int runLength, int jumpHeight) {
-//        this.name = name;
-//        this.color = color;
-//        this.runLength = runLength;
-//        this.jumpHeight = jumpHeight;
-//        swimLength=0;
-//    }
+    protected int runLength=0;
+    protected int jumpHeight=0;
+    protected int swimLength=0;
 
     public String getName() {
         return name;
@@ -51,11 +31,11 @@ public class Animal {
     }
 
     public void info() {
-        System.out.println(name + color + runLength + jumpHeight + swimLength);
+        System.out.println(name +" " +color  +" " + runLength  +" " + jumpHeight  +" " + swimLength);
     }
 
     public void run(int distance) {
-        if (distance>runLength) System.out.println(name +" не может Пробежать такую дистанцию");
+        if (distance>runLength) System.out.println(name +" не может пробежать такую дистанцию");
         else System.out.println(name+" пробежал "+distance+" метров.");
     }
 
@@ -68,7 +48,5 @@ public class Animal {
         if (distance>runLength) System.out.println(name +" не может Прыгнуть так далеко");
         else System.out.println(name+" прыгнул на "+distance+" метров.");
     }
-
-
 
 }
