@@ -12,23 +12,23 @@ public class Animal {
 
 
 
-    public Animal(){}
-
-    public Animal(String name, String color, int runLength, int jumpHeight, int swimLength) {
-        this.name = name;
-        this.color = color;
-        this.runLength = runLength;
-        this.jumpHeight = jumpHeight;
-        this.swimLength = swimLength;
-    }
-
-    public Animal(String name, String color, int runLength, int jumpHeight) {
-        this.name = name;
-        this.color = color;
-        this.runLength = runLength;
-        this.jumpHeight = jumpHeight;
-        swimLength=0;
-    }
+//    public Animal(){}
+//
+//    public Animal(String name, String color, int runLength, int jumpHeight, int swimLength) {
+//        this.name = name;
+//        this.color = color;
+//        this.runLength = runLength;
+//        this.jumpHeight = jumpHeight;
+//        this.swimLength = swimLength;
+//    }
+//
+//    public Animal(String name, String color, int runLength, int jumpHeight) {
+//        this.name = name;
+//        this.color = color;
+//        this.runLength = runLength;
+//        this.jumpHeight = jumpHeight;
+//        swimLength=0;
+//    }
 
     public String getName() {
         return name;
@@ -50,13 +50,17 @@ public class Animal {
         return swimLength;
     }
 
+    public void info() {
+        System.out.println(name + color + runLength + jumpHeight + swimLength);
+    }
+
     public void run(int distance) {
         if (distance>runLength) System.out.println(name +" не может Пробежать такую дистанцию");
         else System.out.println(name+" пробежал "+distance+" метров.");
     }
 
     public void jump(int distance) {
-        if (distance>runLength) System.out.println(name +" не может Прыгнуть так далеко");
+        if (distance>runLength) System.out.println(name +" не может прыгнуть так далеко");
         else System.out.println(name+" прыгнул на "+distance+" метров.");
     }
 

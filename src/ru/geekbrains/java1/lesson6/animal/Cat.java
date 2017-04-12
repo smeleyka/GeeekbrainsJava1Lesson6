@@ -8,11 +8,14 @@ public class Cat extends Animal{
 
     public Cat(String name, String color, int runLength, int jumpHeight) {
         this.name=name;
+        this.color=color;
+        this.runLength=runLength;
+        this.jumpHeight=jumpHeight;
 
     }
 
     @Override
     public void swim(int distance) {
-        System.out.println("Я не умею плавать");
+        System.out.println(name+" не умеет плавать");
     }
 }
