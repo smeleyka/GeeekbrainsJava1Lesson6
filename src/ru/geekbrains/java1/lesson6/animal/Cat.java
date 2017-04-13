@@ -5,27 +5,14 @@ import java.util.Random;
 /**
  * Created by smeleyka on 12.04.17.
  */
-public class Cat extends Animal{
-    Random rand = new Random();
-    static int swimLenght = 0;
+public class Cat extends Animal {
+    private static Random rand = new Random();
 
-
-    public Cat(){}
-    public Cat(String name){
-        this.name=name;
-        this.color= "ordinary";
-        this.runLength=(rand.nextInt(4)+2)*100;
-    }
-    public Cat(String name, String color, int runLength, int jumpHeight) {
-        this.name=name;
-        this.color=color;
-        this.runLength=runLength;
-        this.jumpHeight=jumpHeight;
-
-    }
-
-    @Override
-    public void swim(int distance) {
-        System.out.println(name+" не умеет плавать");
+    public Cat(String name) {
+        this.type = "Кот";
+        this.name = name;
+        this.runLength = (rand.nextInt(4) + 2) * 100;
+        this.jumpHeight = (float) (rand.nextInt(50) + 20) / 10; //от 2.0 до 7.0
+        this.swimLength = 0; //коты не умеют плавать
     }
 }

@@ -3,50 +3,33 @@ package ru.geekbrains.java1.lesson6.animal;
 /**
  * Created by smeleyka on 12.04.17.
  */
-public abstract class Animal {
+public class Animal {
+    protected String type;
     protected String name;
-    protected String color;
-    protected int runLength=0;
-    protected int jumpHeight=0;
-    protected int swimLength=0;
-
-    public String getName() {
-        return name;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public int getRunLength() {
-        return runLength;
-    }
-
-    public int getJumpHeight() {
-        return jumpHeight;
-    }
-
-    public int getSwimLength() {
-        return swimLength;
-    }
+    protected int runLength;
+    protected float jumpHeight;
+    protected int swimLength;
 
     public void info() {
-        System.out.println(name +" " +color  +" " + runLength  +" " + jumpHeight  +" " + swimLength);
+        if (swimLength == 0)
+            System.out.println(type + " " + name + " умеет: бегать " + runLength + "м, прыгать " + jumpHeight + "м, не плавает");
+        else
+            System.out.println(type + " " + name + " умеет: бегать " + runLength + "м, прыгать " + jumpHeight + "м, плавать " + swimLength + "м");
     }
 
     public void run(int distance) {
-        if (distance>runLength) System.out.println(name +" не может пробежать такую дистанцию");
-        else System.out.println(name+" пробежал "+distance+" метров.");
+        if (distance > runLength) System.out.println(type + " " + name + " не может пробежать такую дистанцию");
+        else System.out.println(type + " " + name + " пробежал " + distance + " метров.");
     }
 
     public void jump(int distance) {
-        if (distance>runLength) System.out.println(name +" не может прыгнуть так далеко");
-        else System.out.println(name+" прыгнул на "+distance+" метров.");
+        if (distance > runLength) System.out.println(type + " " + name + " не может прыгнуть так далеко");
+        else System.out.println(type + " " + name + " прыгнул на " + distance + " метров.");
     }
 
-    public void swim(int distance) {
-        if (distance>runLength) System.out.println(name +" не может Прыгнуть так далеко");
-        else System.out.println(name+" прыгнул на "+distance+" метров.");
+    public void swim(float distance) {
+        if (swimLength == 0) System.out.println(type + " " + name + " не умеет плавать");
+        else if (distance > swimLength) System.out.println(type + " " + name + " не может плавать так далеко");
+        else System.out.println(type + " " + name + " проплыл " + distance + " метров.");
     }
-
 }
